@@ -1,22 +1,23 @@
-import { faHome, faStar, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 import Sidebar from "../../shared/components/SideBar/Sidebar";
 
 const HomeView = () => {
 
+    const { state } = useContext(AppContext);
+
     return (
         <>
-            <div className="flex">
+            <div className="flex bg-[#1c242c] h-screen">
                 <Sidebar />
-                <div className="flex w-[100%] h-screen bg-[#1c242c] justify-between">
-                    <div className="text-2xl mt-10 mx-40">
-                        <p className="text-white">Películas populares</p>
-                    </div>
-                    <div className="relative mt-10 mr-20">
-                        <span className="absolute left-3 top-2">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} color='#ccc'/>
-                        </span>
-                        <input type="text" className="bg-[#1c242c] border border-slate-700 rounded px-10 py-2 text-gray-300 focus:outline-0" placeholder="Buscar película.." />
+                <div className={`flex flex-col w-full ${state.menuIsOpen ? 'blur-sm' : ''} `}>
+                    <div className="flex lg:flex-row max-md:flex-col max-md:flex-col-reverse max-md:mt-10 justify-between mt-20 px-20">
+                        <div className="max-md:mt-20">
+                            <h3 className="text-2xl text-white">Películas populares</h3>
+                        </div>
+                        <div>
+                            <input type="text" className="rounded py-3 pl-10 pr-20 bg-[#364854] focus:outline-0 text-white" placeholder="Buscar películas..." />
+                        </div>
                     </div>
                 </div>
             </div>
