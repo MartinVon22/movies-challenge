@@ -25,8 +25,8 @@ const Sidebar = () => {
     return (
         <div className="flex flex-col h-screen bg-[#1c242c] w-64">
             <nav className="flex flex-col my-[50%]">
-                <a href="#" className={`text-white transition hover:bg-[#364854] hover:text-white py-2 px-10 rounded ${routeActive === 'Home' ? 'bg-[#364854]' : ''}`}><FontAwesomeIcon icon={faHome} /> Inicio</a>
-                <a href="#" className="text-gray-500 transition hover:bg-[#364854] hover:text-white py-2 rounded px-10"><FontAwesomeIcon icon={faStar} /> Mis favoritos</a>
+                <a href="#" className={`transition hover:bg-[#364854] hover:text-white py-2 px-10 rounded ${routeActive === 'Home' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faHome} /> Inicio</a>
+                <a href="#" className={`transition hover:bg-[#364854] hover:text-white py-2 px-10 rounded ${routeActive === 'Favourites' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faStar} /> Mis favoritos</a>
             </nav>
         </div>
     )
