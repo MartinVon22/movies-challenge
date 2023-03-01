@@ -36,8 +36,8 @@ const Sidebar = () => {
             <span className={`absolute z-40 top-5 transition-all ${!menuIsOpen ? 'left-10' : 'left-56'} hover:cursor-pointer`} onClick={handleShowMenu}><FontAwesomeIcon  icon={menuIsOpen ? faClose: faBars} color='white' size={'lg'} /></span>
             <div className={`flex flex-col h-screen absolute bg-[#1c242c] w-64 z-10 transition-all ${!menuIsOpen ? '-ml-[100%]' : 'ml-[0%]'}`}>
                 <nav className="flex flex-col my-[50%]">
-                    <span className={`transition hover:bg-[#364854] hover:text-white py-2 px-10 rounded ${routeActive === 'Home' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faHome} /> Inicio</span>
-                    <span className={`transition hover:bg-[#364854] hover:text-white py-2 px-10 rounded ${routeActive === 'Favourites' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faStar} /> Mis favoritos</span>
+                    <span className={`transition hover:bg-[#364854] hover:text-white hover:cursor-pointer py-2 px-10 rounded ${routeActive === 'Home' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faHome} /> Inicio</span>
+                    <span className={`transition hover:bg-[#364854] hover:text-white hover:cursor-pointer py-2 px-10 rounded ${routeActive === 'Favourites' ? 'bg-[#364854] text-white' : 'text-gray-500'}`}><FontAwesomeIcon icon={faStar} /> Mis favoritos</span>
                 </nav>
             </div>
         </>
