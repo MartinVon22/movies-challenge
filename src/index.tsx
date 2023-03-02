@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -6,10 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomeView from './components/Home/Home';
 import { AppContextProvider } from './context/AppContext';
 
+const Home = lazy(() => import('./components/Home/Home'));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeView />,
+    element: <Home />,
   },
 ]);
 
