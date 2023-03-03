@@ -6,16 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AppContextProvider } from './context/AppContext';
 
 const HomePage = lazy(() => import('./components/Home/HomePage'));
-const DetailPage = lazy(() => import('./components/Detail/DetailPage'));
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
   },
-  {
-    path: "/movie/:id/detail",
-    element: <DetailPage />
-  }
 ]);
  
 const root = ReactDOM.createRoot(
