@@ -189,7 +189,7 @@ const HomeView = () => {
                     </div>
                     <div className="flex flex-col mt-20">
                         <div className={`w-[50%] ml-[20%]`}>
-                            <p className="absolute right-[20%] p-2 rounded-full text-white bg-orange-400">{movieDetail.vote_average}</p>
+                            <p className="absolute right-[10%] p-2 rounded-full text-orange-400"><FontAwesomeIcon icon={faStar} /> {movieDetail.vote_average}</p>
                             <h4 className="text-white text-4xl underline text-center">{movieDetail.title}</h4>
                             <p className="text-center text-slate-400 mt-5">{movieDetail.original_title} &middot; {moment(movieDetail.release_date).format('YYYY')} &middot; {movieDetail.original_language} {movieDetail.adult ? '&middot; 18+' : ''}</p>
                             <p className="text-center text-slate-400 mt-1"><FontAwesomeIcon icon={faStar} /> {movieDetail.vote_count}</p>
