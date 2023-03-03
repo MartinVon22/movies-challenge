@@ -22,3 +22,24 @@ code {
 * {
   user-select: none;
 }
+
+::-webkit-scrollbar {
+  background-color: #1c242c;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #364854;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}
