@@ -2,7 +2,8 @@ import React, { createContext, useReducer } from "react";
 
 
 const initialState = {
-    menuIsOpen: false
+    menuIsOpen: false,
+    movies: []
 };
 
 export const AppContext = createContext({ state: initialState, dispatch: (action: any) => {} });
@@ -14,6 +15,8 @@ const reducer = (state: any, action: any) => {
       return { ...state, menuIsOpen: true };
     case "CLOSE_MENU":
       return { ...state, menuIsOpen: false };
+    case "ADD_MOVIES":
+      return {...state, movies: [...state.movies, action.movie] }
     default:
       throw new Error(`Acción invalida: ${action.type}`);
   }
