@@ -1,19 +1,23 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomeView from './components/Home/Home';
 import { AppContextProvider } from './context/AppContext';
 
-const Home = lazy(() => import('./components/Home/Home'));
+const HomePage = lazy(() => import('./components/Home/HomePage'));
+const DetailPage = lazy(() => import('./components/Detail/DetailPage'));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
   },
+  {
+    path: "/movie/:id/detail",
+    element: <DetailPage />
+  }
 ]);
-
+ 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -21,7 +25,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <AppContextProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <Suspense>
+        <RouterProvider router={router}></RouterProvider>
+      </Suspense>
     </AppContextProvider>
   </React.StrictMode>
 );
